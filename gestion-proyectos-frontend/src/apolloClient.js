@@ -1,6 +1,4 @@
-// src/ApolloProvider.js
-import React from 'react';
-import { ApolloClient, InMemoryCache, ApolloProvider as ApolloProviderClient } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 // Configura Apollo Client
 const client = new ApolloClient({
@@ -8,11 +6,5 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-// Proveedor de Apollo para la aplicación
-const ApolloProvider = ({ children }) => (
-  <ApolloProviderClient client={client}>
-    {children}
-  </ApolloProviderClient>
-);
-
+// Exporta el cliente y el proveedor de Apollo
 export { client, ApolloProvider };

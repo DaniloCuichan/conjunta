@@ -24,26 +24,33 @@ const Tareas = () => {
   const { loading, error, data } = useQuery(OBTENER_TAREAS);
 
   if (loading) return <p>Cargando tareas...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (error) return <p>Error al cargar las tareas: {error.message}</p>;
 
   return (
     <div>
       <h2>Tareas</h2>
-      <ul>
-        {data.obtenerTareas.length === 0 ? (
-          <li>No hay tareas disponibles.</li>
-        ) : (
-          data.obtenerTareas.map(tarea => (
-            <li key={tarea.id}>
-              <strong>{tarea.titulo}</strong> - {tarea.descripcion || 'Descripción no disponible'}
-              <br />
-              Proyecto: {tarea.proyecto ? tarea.proyecto.nombre : 'Nombre del proyecto no disponible'}
-              <br />
-              Empleados: {tarea.empleados && tarea.empleados.length > 0 ? tarea.empleados.map(emp => emp.nombre).join(', ') : 'No asignado'}
+      {data.obtenerTareas.length === 0 ? (
+        <p>No hay tareas disponibles.</p>
+      ) : (
+        <ul>
+          {data.obtenerTareas.map(tarea => (
+            <li key={tarea.id} style={{ marginBottom: '1em' }}>
+              <div>
+                <strong>Título:</strong> {tarea.titulo}
+              </div>
+              <div>
+                <strong>Descripción:</strong> {tarea.descripcion || 'Descripción no disponible'}
+              </div>
+              <div>
+                <strong>Proyecto:</strong> {tarea.proyecto ? tarea.proyecto.nombre : 'Nombre del proyecto no disponible'}
+              </div>
+              <div>
+                <strong>Empleados:</strong> {tarea.empleados && tarea.empleados.length > 0 ? tarea.empleados.map(emp => emp.nombre).join(', ') : 'No asignado'}
+              </div>
             </li>
-          ))
-        )}
-      </ul>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

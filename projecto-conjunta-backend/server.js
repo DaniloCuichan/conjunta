@@ -1,6 +1,7 @@
 const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const { sequelize } = require('./db');
 const schema = require('./schema');
 const root = require('./resolvers');
@@ -10,9 +11,7 @@ const port = 4000;
 
 // Configuración de CORS
 app.use(cors());
-
-// Middleware para manejar JSON
-app.use(express.json());
+app.use(bodyParser.json());
 
 // Configuración del middleware GraphQL
 app.use('/graphql', graphqlHTTP({
@@ -21,19 +20,15 @@ app.use('/graphql', graphqlHTTP({
   graphiql: true,
 }));
 
-// Manejador de errores
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Algo salió mal!');
+// Inicia el servidor
+app.listen(port, () => {
+  console.log(`Servidor GraphQL corriendo en http://localhost:${port}/graphql`);
 });
 
-// Sincroniza la base de datos e inicia el servidor
-sequelize.sync({ force: false }) // Cambia `force` a `true` solo si necesitas reiniciar la base de datos
+// Sincroniza la base de datos
+sequelize.sync({ force: true }) // Utiliza `force: true` solo en desarrollo para reiniciar la base de datos
   .then(() => {
     console.log('Base de datos sincronizada');
-    app.listen(port, () => {
-      console.log(`Servidor GraphQL corriendo en http://localhost:${port}/graphql`);
-    });
   })
   .catch(error => {
     console.error('Error al sincronizar la base de datos:', error);

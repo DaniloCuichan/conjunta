@@ -15,16 +15,20 @@ const Proyectos = () => {
   const { loading, error, data } = useQuery(OBTENER_PROYECTOS);
 
   if (loading) return <p>Cargando proyectos...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (error) return <p>Error al cargar los proyectos: {error.message}</p>;
 
   return (
     <div>
       <h2>Proyectos</h2>
-      <ul>
-        {data.obtenerProyectos.map(proyecto => (
-          <li key={proyecto.id}>{proyecto.nombre}</li>
-        ))}
-      </ul>
+      {data.obtenerProyectos.length > 0 ? (
+        <ul>
+          {data.obtenerProyectos.map(proyecto => (
+            <li key={proyecto.id}>{proyecto.nombre}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>No hay proyectos disponibles.</p>
+      )}
     </div>
   );
 };
