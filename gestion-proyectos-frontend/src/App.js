@@ -13,13 +13,13 @@ const App = () => {
       <Crear />
 
       <section className="list-section">
-        <h2>Proyectos</h2>
+        <h2></h2>
         <Proyectos />
         
-        <h2>Empleados</h2>
+        <h2></h2>
         <Empleados />
         
-        <h2>Tareas</h2>
+        <h2></h2>
         <Tareas />
       </section>
     </div>

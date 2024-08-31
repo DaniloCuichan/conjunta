@@ -1,10 +1,12 @@
+// apolloClient.js
+
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-// Configura Apollo Client
+// Crea una instancia del cliente de Apollo
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql', // Cambia esto si tu servidor GraphQL está en otra dirección
-  cache: new InMemoryCache()
+  uri: 'http://localhost:4000/graphql', // Reemplaza con la URI de tu servidor GraphQL
+  cache: new InMemoryCache(),
 });
 
-// Exporta el cliente y el proveedor de Apollo
+// Exporta el cliente y el proveedor
 export { client, ApolloProvider };
