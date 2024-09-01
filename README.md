@@ -13,7 +13,7 @@ Crear Empleados: Permite agregar nuevos empleados con un nombre.
 Crear Tareas: Permite crear tareas asociadas a proyectos específicos con un título y una descripción.
 Asignar Empleados a Tareas: Permite asignar empleados a tareas creadas previamente.
 
-![alt text](image-1.png)
+![alt text](/img_readme/image-1.png)
 
 Instalación
 Clonar el repositorio:
