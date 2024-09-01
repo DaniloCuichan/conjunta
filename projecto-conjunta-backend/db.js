@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
-const sequelize = new Sequelize('prueba', 'root', '123', {
+const sequelize = new Sequelize('gestion_proyectos', 'root', '', {
   host: 'localhost',
   dialect: 'mysql',
   logging: console.log // Activa el logging de consultas SQL

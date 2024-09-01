@@ -1,7 +1,23 @@
 Gestión de Proyectos 
 
+- lOGIN
+
+![alt text](/img_readme/image-16.png)
+
+- DASHBOARD PRINCIPAL
+
+![alt text](/img_readme/image-18.png)
+
+- OPCIONES DE INGRESO
 
 ![alt text](/img_readme/image-15.JPG)
+
+- REGISTROS
+
+![alt text](/img_readme/image-17.png)
+
+
+
 
 
 Este proyecto es una aplicación React que utiliza Apollo Client para interactuar con una API GraphQL. Permite crear y gestionar proyectos, empleados y tareas, así como asignar empleados a tareas específicas. A continuación se describe el funcionamiento y las características principales del proyecto.
@@ -42,6 +58,10 @@ Iniciar el front desde la ubicacion de gestion-proyectos-frontend:
 npm start
 
 ![alt text](/img_readme/image-13.png)
+
+para acceder la contraseña y usuario son:
+
+![alt text](/img_readme/image.png)
 
 Crear Nuevos Proyectos:
 
