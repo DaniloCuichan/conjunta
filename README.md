@@ -28,10 +28,22 @@ npm install
 Configurar Apollo Client: Asegúrate de configurar correctamente el cliente Apollo con la URL de tu servidor GraphQL.
 Puedes ajustar esta configuración en el archivo src/apolloClient.js.
 
-Iniciar el servidor:
+previo a iniciar el back se debe crear una base de datos Mysql con el nombre 
+
+![alt text](/img_readme/image-12.png)
+
+Para Iniciar el Backend desde la ubicacion de projecto-conjunta-backend>:
+
+se debe ejecutar: node server.js
+
+![alt text](/img_readme/image-13.png)
+
+Iniciar el front desde la ubicacion de gestion-proyectos-frontend:
 
 npm start
-Uso
+
+![alt text](/img_readme/image-14.png)
+
 Crear Nuevos Proyectos:
 
 Navega a la sección "Nuevo Proyecto".
