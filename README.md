@@ -24,44 +24,55 @@ git clone <URL del repositorio>
 cd <nombre del repositorio>
 Instalar dependencias:
 
-bash
-Copiar código
 npm install
-Configurar Apollo Client: Asegúrate de configurar correctamente el cliente Apollo con la URL de tu servidor GraphQL. Puedes ajustar esta configuración en el archivo src/apolloClient.js.
+Configurar Apollo Client: Asegúrate de configurar correctamente el cliente Apollo con la URL de tu servidor GraphQL.
+Puedes ajustar esta configuración en el archivo src/apolloClient.js.
 
 Iniciar el servidor:
 
-bash
-Copiar código
 npm start
 Uso
 Crear Nuevos Proyectos:
 
 Navega a la sección "Nuevo Proyecto".
 Ingresa el nombre del proyecto y envía el formulario para crear un nuevo proyecto.
+
+![alt text](image-2.png)
+
 Agregar Nuevos Empleados:
 
 Navega a la sección "Nuevo Empleado".
 Ingresa el nombre del empleado y envía el formulario para agregar un nuevo empleado.
+
+![alt text](image-3.png)
+
 Crear Nuevas Tareas:
 
 Navega a la sección "Crear Tarea".
 Ingresa el título y la descripción de la tarea, así como el ID del proyecto al que pertenece, y envía el formulario para crear una nueva tarea.
+
+![alt text](image-4.png)
+
 Asignar Empleados a Tareas:
 
 Después de crear una tarea, navega a la sección "Asignar Empleado a Tarea".
 Selecciona el empleado y envía el formulario para asignar el empleado a la tarea correspondiente.
+
 Consultas y Mutaciones GraphQL
+
+
 Consultar Empleados:
 
-graphql
-Copiar código
+
 query ObtenerEmpleados {
   empleados {
     id
     nombre
   }
 }
+
+![alt text](image-6.png)
+
 Mutaciones:
 
 Crear Proyecto:
@@ -99,6 +110,7 @@ mutation CrearTarea($titulo: String!, $descripcion: String, $proyectoId: ID!) {
     }
   }
 }
+
 Asignar Empleado a Tarea:
 
 graphql
@@ -116,3 +128,17 @@ mutation AsignarEmpleadoATarea($tareaId: ID!, $empleadoId: ID!) {
 }
 
 
+query ObtenerTareasConDetalles {
+  obtenerTareas {
+    id
+    titulo
+    proyecto {
+      nombre
+    }
+    empleados {
+      nombre
+    }
+  }
+}
+
+![alt text](image-5.png)
