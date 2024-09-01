@@ -30,6 +30,13 @@ const schema = buildSchema(`
     crearEmpleado(nombre: String!): Empleado
     crearTarea(titulo: String!, descripcion: String, proyectoId: ID!): Tarea
     asignarEmpleadoATarea(tareaId: ID!, empleadoId: ID!): Tarea
+    
+    actualizarProyecto(id: ID!, nombre: String!): Proyecto
+    eliminarProyecto(id: ID!): Boolean
+    actualizarEmpleado(id: ID!, nombre: String!): Empleado
+    eliminarEmpleado(id: ID!): Boolean
+    actualizarTarea(id: ID!, titulo: String!, descripcion: String): Tarea
+    eliminarTarea(id: ID!): Boolean
   }
 `);
 

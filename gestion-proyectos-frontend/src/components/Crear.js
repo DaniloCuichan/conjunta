@@ -78,62 +78,123 @@ const Crear = () => {
   };
 
   return (
-    <div className="crear-section">
-      <h2>Crear Nuevos Elementos</h2>
-      <div className="crear-element">
-        <h3>Nuevo Proyecto</h3>
-        <form onSubmit={handleCrearProyecto}>
-          <label>Nombre del proyecto</label>
+    <div className="crear-section" style={styles.container}>
+      <h2 style={styles.header}>Crear Nuevos Elementos</h2>
+      <div className="crear-element" style={styles.element}>
+        <h3 style={styles.subHeader}>Nuevo Proyecto</h3>
+        <form onSubmit={handleCrearProyecto} style={styles.form}>
+          <label style={styles.label}>Nombre del proyecto</label>
           <input
             type="text"
             placeholder="Nombre del proyecto"
             value={nombreProyecto}
             onChange={(e) => setNombreProyecto(e.target.value)}
+            style={styles.input}
           />
-          <button type="submit">Crear Proyecto</button>
+          <button type="submit" style={styles.button}>Crear Proyecto</button>
         </form>
       </div>
-      <div className="crear-element">
-        <h3>Nuevo Empleado</h3>
-        <form onSubmit={handleCrearEmpleado}>
-          <label>Nombre del empleado</label>
+      <div className="crear-element" style={styles.element}>
+        <h3 style={styles.subHeader}>Nuevo Empleado</h3>
+        <form onSubmit={handleCrearEmpleado} style={styles.form}>
+          <label style={styles.label}>Nombre del empleado</label>
           <input
             type="text"
             placeholder="Nombre del empleado"
             value={nombreEmpleado}
             onChange={(e) => setNombreEmpleado(e.target.value)}
+            style={styles.input}
           />
-          <button type="submit">Crear Empleado</button>
+          <button type="submit" style={styles.button}>Crear Empleado</button>
         </form>
       </div>
-      <div className="crear-element">
-        <h3>Crear Tarea</h3>
-        <form onSubmit={handleCrearTarea}>
-          <label>Título de la tarea</label>
+      <div className="crear-element" style={styles.element}>
+        <h3 style={styles.subHeader}>Crear Tarea</h3>
+        <form onSubmit={handleCrearTarea} style={styles.form}>
+          <label style={styles.label}>Título de la tarea</label>
           <input
             type="text"
             placeholder="Título de la tarea"
             value={tituloTarea}
             onChange={(e) => setTituloTarea(e.target.value)}
+            style={styles.input}
           />
-          <label>Descripción de la tarea</label>
+          <label style={styles.label}>Descripción de la tarea</label>
           <textarea
             placeholder="Descripción de la tarea"
             value={descripcionTarea}
             onChange={(e) => setDescripcionTarea(e.target.value)}
+            style={styles.textarea}
           ></textarea>
-          <label>ID del proyecto</label>
+          <label style={styles.label}>ID del proyecto</label>
           <input
             type="text"
             placeholder="ID del proyecto"
             value={proyectoId}
             onChange={(e) => setProyectoId(e.target.value)}
+            style={styles.input}
           />
-          <button type="submit">Crear Tarea</button>
+          <button type="submit" style={styles.button}>Crear Tarea</button>
         </form>
       </div>
     </div>
   );
+};
+
+const styles = {
+  container: {
+    maxWidth: '800px',
+    margin: '0 auto',
+    padding: '20px',
+    backgroundColor: '#f9f9f9',
+    borderRadius: '8px',
+    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+  },
+  header: {
+    textAlign: 'center',
+    marginBottom: '20px',
+  },
+  element: {
+    marginBottom: '20px',
+    padding: '15px',
+    border: '1px solid #ddd',
+    borderRadius: '8px',
+    backgroundColor: '#fff',
+  },
+  subHeader: {
+    marginBottom: '10px',
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '10px',
+  },
+  label: {
+    fontWeight: 'bold',
+  },
+  input: {
+    padding: '10px',
+    fontSize: '16px',
+    borderRadius: '4px',
+    border: '1px solid #ccc',
+  },
+  textarea: {
+    padding: '10px',
+    fontSize: '16px',
+    borderRadius: '4px',
+    border: '1px solid #ccc',
+    height: '100px',
+  },
+  button: {
+    padding: '10px 20px',
+    fontSize: '16px',
+    color: '#fff',
+    backgroundColor: '#007bff',
+    border: 'none',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s',
+  }
 };
 
 export default Crear;
