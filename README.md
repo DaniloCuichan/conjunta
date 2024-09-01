@@ -30,13 +30,13 @@ Puedes ajustar esta configuración en el archivo src/apolloClient.js.
 
 previo a iniciar el back se debe crear una base de datos Mysql con el nombre 
 
-![alt text](/img_readme/image-12.png)
+![alt text](/img_readme/image-13.png)
 
 Para Iniciar el Backend desde la ubicacion de projecto-conjunta-backend>:
 
 se debe ejecutar: node server.js
 
-![alt text](/img_readme/image-13.png)
+![alt text](/img_readme/image-12.png)
 
 Iniciar el front desde la ubicacion de gestion-proyectos-frontend:
 
