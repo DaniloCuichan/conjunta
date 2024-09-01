@@ -142,3 +142,40 @@ query ObtenerTareasConDetalles {
 }
 
 ![alt text](image-5.png)
+
+Descripción de la Base de Datos
+La base de datos utilizada en este proyecto está diseñada para gestionar la información de proyectos, tareas y empleados en un sistema de gestión de proyectos. A continuación se detalla la estructura y las relaciones principales entre las entidades:
+
+Entidades
+Proyecto
+
+ID: Identificador único del proyecto.
+Nombre: Nombre del proyecto.
+Empleado
+
+![alt text](image-7.png)
+
+ID: Identificador único del empleado.
+Nombre: Nombre del empleado.
+Tarea
+
+ID: Identificador único de la tarea.
+Título: Título de la tarea.
+Descripción: Descripción detallada de la tarea (opcional).
+
+![alt text](image-8.png)
+
+Proyecto: Relación con el proyecto al que pertenece la tarea.
+Empleados: Lista de empleados asignados a la tarea.
+
+![alt text](image-9.png)
+
+
+Relaciones
+Tareas y Proyectos: Cada tarea está asociada a un proyecto específico. Esta relación permite que cada tarea pertenezca a un proyecto, facilitando la gestión y seguimiento de las tareas dentro de cada proyecto.
+
+![alt text](image-10.png)
+
+Tareas y Empleados: Las tareas pueden ser asignadas a uno o más empleados. La relación entre tareas y empleados permite gestionar la asignación de tareas y ver qué empleados están trabajando en cada tarea.
+
+![alt text](image-11.png)
