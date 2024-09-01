@@ -1,7 +1,7 @@
 Gestión de Proyectos 
 
 
-![alt text](/img_readme/image-15.png)
+![alt text](/img_readme/image-15.JPG)
 
 
 Este proyecto es una aplicación React que utiliza Apollo Client para interactuar con una API GraphQL. Permite crear y gestionar proyectos, empleados y tareas, así como asignar empleados a tareas específicas. A continuación se describe el funcionamiento y las características principales del proyecto.
